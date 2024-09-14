@@ -9,11 +9,13 @@ class Vehiculo:
         kilometraje (float): El kilometraje del vehículo.
         estadoActual (str): El estado actual del vehículo.
         tipoCombustible (str): El tipo de combustible que utiliza el vehículo.
+        color (str): El color del vehículo.
+        potencia (str): La potencia del vehículo.
     """
 
     TIPOS_COMBUSTIBLE_VALIDOS = ["Gasolina", "Diesel", "Eléctrico"]
 
-    def _init_(self, marca, modelo, año, kilometraje, estado, tipoCombustible, color):
+    def _init_(self, marca, modelo, año, kilometraje, estado, tipoCombustible, color, potencia):
         self.marca = marca
         self.modelo = modelo
         self.año = año
@@ -21,6 +23,7 @@ class Vehiculo:
         self.estado = estado
         self.setTipoCombustible(tipoCombustible)
         self.color = color
+        self.potencia = potencia
 
     # Getters
     def getMarca(self):
@@ -85,6 +88,15 @@ class Vehiculo:
             str: El color del vehículo.
         """
         return self.color
+    
+    def getPotencia(self):
+        """
+        Obtiene la potencia del vehículo.
+
+        Returns:
+            str: La potencia del vehículo.
+        """
+        return self.potencia
 
     # Setters
     def setMarca(self, marca):
@@ -151,3 +163,12 @@ class Vehiculo:
             color (str): El nuevo color del vehículo.
         """
         self.color = color
+    
+    def setPotencia(self, potencia):
+        """
+        Establece la potencia del vehículo.
+
+        Args:
+            potencia (str): La nueva potencia del vehículo.
+        """
+        self.potencia = potencia
