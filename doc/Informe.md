@@ -4,13 +4,13 @@
 
 Este proyecto consistió en el desarrollo de un **Sistema de Gestión de Vehículos**, que permite registrar vehículos, almacenar su historial de mantenimiento y realizar búsquedas avanzadas de acuerdo a diferentes criterios, como el año de fabricación. El proyecto fue gestionado usando Git y GitHub para el control de versiones, lo que facilitó la colaboración en equipo y la integración de las funcionalidades desarrolladas por cada miembro.
 
-## Participantes del Equipo
 
-- **Juan Pérez**: Implementación de la clase `Vehiculo` y sus atributos.
-- **Luis Rojas**: Desarrollo de la clase `HistorialMantenimiento` para registrar los mantenimientos realizados a los vehículos.
-- **Ana Torres**: Creación de la clase `Main` para gestionar la lista de vehículos, incluyendo la funcionalidad de búsqueda por año.
-- **Carlos Ramírez**: Añadió validaciones a la clase `Vehiculo` para el tipo de combustible.
-- **María Sánchez**: Actualización del método de impresión para reflejar las nuevas funcionalidades y atributos de los vehículos.
+## Miembros del Equipo
+LUIS MANUEL ROJAS 
+OSCAR MUÑOZ
+DIEGO POLANCO
+SEBASTIAN ERAZO
+ANDRES CHAMORRO
 
 ## Funcionalidades Implementadas
 
