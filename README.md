@@ -62,3 +62,17 @@ sistema.buscar_vehiculos_por_año(2020, 'antes')
 # Buscar vehículos fabricados después del 2019
 sistema.buscar_vehiculos_por_año(2019, 'despues')
 ```
+
+### Búsqueda por Rango de Años
+
+El sistema permite buscar vehículos dentro de un rango de años. Esta funcionalidad es útil para obtener una lista de vehículos fabricados dentro de un intervalo de tiempo.
+
+Para buscar vehículos dentro de un rango de años, puedes utilizar el método `buscar_vehiculos_por_rango_de_años`.
+
+#### Ejemplo:
+
+```python
+sistema.buscar_vehiculos_por_rango_de_años(2018, 2020)
+```
+
+Este código buscara los carros del año 2018, 2019 y 2020.
