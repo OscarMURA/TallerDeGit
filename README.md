@@ -12,6 +12,7 @@ Este proyecto es un sistema de gestión para vehículos, que permite registrar v
    - Kilometraje
    - Estado (Nuevo o Usado)
    - Tipo de Combustible (Gasolina, Diesel, Eléctrico)
+   - **Color** (nuevo atributo añadido)
 
 2. **Historial de Mantenimiento**: Registra los detalles del mantenimiento del vehículo, incluyendo:
    - Fecha del servicio
