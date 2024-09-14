@@ -34,6 +34,19 @@ class Main:
         else:
             print(f"No se encontraron vehículos del año {año}.")
 
+    # Método para buscar vehículos por año o rango de años
+    def buscar_vehiculos_por_rango_de_años(self, año_inicio, año_fin=None):
+        if año_fin is None:
+            año_fin = año_inicio
+        encontrados = [vehiculo for vehiculo in self.vehiculos if año_inicio <= vehiculo.getAño() <= año_fin]
+        if encontrados:
+            print(f"Vehículos entre los años {año_inicio} y {año_fin}:")
+            for vehiculo in encontrados:
+                print(f"- {vehiculo.getMarca()} {vehiculo.getModelo()} ({vehiculo.getAño()})")
+        else:
+            print(f"No se encontraron vehículos entre los años {año_inicio} y {año_fin}.")
+
+
 def main():
     sistema = Main()
 
