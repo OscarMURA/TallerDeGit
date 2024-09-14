@@ -13,6 +13,7 @@ Este proyecto es un sistema de gestión para vehículos, que permite registrar v
    - Estado (Nuevo o Usado)
    - Tipo de Combustible (Gasolina, Diesel, Eléctrico)
    - **Color** (nuevo atributo añadido)
+   - Potencia (nuevo atributo añadido): Indica los caballos de fuerza del vehículo, permitiendo registrar la potencia en unidades de caballos de fuerza (HP).
 
 2. **Historial de Mantenimiento**: Registra los detalles del mantenimiento del vehículo, incluyendo:
    - Fecha del servicio
