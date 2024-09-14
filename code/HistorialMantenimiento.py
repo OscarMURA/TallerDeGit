@@ -1,4 +1,6 @@
 class HistorialMantenimiento:
+    
+    
     def __init__(self, fecha, descripcion, kilometraje, costo, mecanico):
         self.fecha = fecha
         self.descripcion = descripcion
