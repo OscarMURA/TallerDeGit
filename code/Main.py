@@ -3,7 +3,7 @@ from Vehicle import Vehiculo
 class Main:
     def __init__(self):
         self.vehiculos = []
-       
+
     # Método para imprimir todos los vehículos registrados
     def mostrar_todos_los_vehiculos(self):
         if not self.vehiculos:
@@ -15,7 +15,7 @@ class Main:
                       f"Modelo: {vehiculo.getModelo()}\n"
                       f"Año: {vehiculo.getAño()}\n"
                       f"Kilometraje: {vehiculo.getKilometraje()}\n"
-                      f"Estado: {vehiculo.getEstadoActual()}\n"
+                      f"Estado: {vehiculo.getEstado()}\n"
                       f"Tipo de Combustible: {vehiculo.getTipoCombustible()}\n"
                       f"{'-'*30}")
 
@@ -24,15 +24,22 @@ class Main:
         self.vehiculos.append(vehiculo)
         print(f"Vehículo {vehiculo.getMarca()} {vehiculo.getModelo()} añadido correctamente.")
 
-    # Método para buscar vehículos por año
-    def buscar_vehiculos_por_año(self, año):
-        encontrados = [vehiculo for vehiculo in self.vehiculos if vehiculo.getAño() == año]
-        if encontrados:
-            print(f"Vehículos del año {año}:")
-            for vehiculo in encontrados:
-                print(f"- {vehiculo.getMarca()} {vehiculo.getModelo()}")
+    # Método para buscar vehículos por año, permite buscar antes o después del año dado
+    def buscar_vehiculos_por_año(self, año, antes_o_despues):
+        if antes_o_despues == 'antes':
+            encontrados = [vehiculo for vehiculo in self.vehiculos if vehiculo.getAño() < año]
+        elif antes_o_despues == 'despues':
+            encontrados = [vehiculo for vehiculo in self.vehiculos if vehiculo.getAño() > año]
         else:
-            print(f"No se encontraron vehículos del año {año}.")
+            print("Debe especificar 'antes' o 'despues' para el filtro.")
+            return
+
+        if encontrados:
+            print(f"Vehículos fabricados {antes_o_despues} del año {año}:")
+            for vehiculo in encontrados:
+                print(f"- {vehiculo.getMarca()} {vehiculo.getModelo()} ({vehiculo.getAño()})")
+        else:
+            print(f"No se encontraron vehículos fabricados {antes_o_despues} del año {año}.")
 
     # Método para buscar vehículos por año o rango de años
     def buscar_vehiculos_por_rango_de_años(self, año_inicio, año_fin=None):
@@ -45,7 +52,6 @@ class Main:
                 print(f"- {vehiculo.getMarca()} {vehiculo.getModelo()} ({vehiculo.getAño()})")
         else:
             print(f"No se encontraron vehículos entre los años {año_inicio} y {año_fin}.")
-
 
 def main():
     sistema = Main()
@@ -60,8 +66,17 @@ def main():
     sistema.añadir_vehiculo(vehiculo2)
     sistema.añadir_vehiculo(vehiculo3)
 
-    # Buscar vehículos por año
-    sistema.buscar_vehiculos_por_año(2018)
+    # Mostrar todos los vehículos registrados
+    sistema.mostrar_todos_los_vehiculos()
+
+    # Buscar vehículos fabricados antes del 2020
+    sistema.buscar_vehiculos_por_año(2020, 'antes')
+
+    # Buscar vehículos fabricados después del 2019
+    sistema.buscar_vehiculos_por_año(2019, 'despues')
+
+    # Buscar vehículos en el rango de años entre 2018 y 2020
+    sistema.buscar_vehiculos_por_rango_de_años(2018, 2020)
 
 if __name__ == "__main__":
     main()
